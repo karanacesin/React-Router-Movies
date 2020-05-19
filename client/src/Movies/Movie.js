@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import {useParams} from 'react-router-dom';
+
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  const param = useParams();
+  const item = movie.find(thing => `${thing.id}` === param.id);
  
   useEffect(() => {
     const id = 1;
@@ -25,6 +29,7 @@ const Movie = (props) => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
   // }
+
 
   if (!movie) {
     return <div>Loading movie information...</div>;
