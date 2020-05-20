@@ -6,7 +6,7 @@ import {useParams} from 'react-router-dom';
 const Movie = (props) => {
   const [movie, setMovie] = useState();
   const param = useParams();
-  const item = movie.find(thing => `${thing.id}` === param.id);
+  const movieid = movie.find(thing => `${thing.id}` === param.id);
  
   useEffect(() => {
     const id = 1;
